@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>    
+</head>
+<body><p>
+    <script>
+        var choixUti = prompt("Choisissez Pierre, Feuille ou ciseaux");
+        var i = true;
+        
+        switch(choixUti) {
+            case "Pierre" : choixUti = "Pierre" ; break;
+            case "pierre" : choixUti = "Pierre" ; break;
+            case "Feuille" : choixUti = "Feuille" ; break;
+            case "feuille" : choixUti = "Feuille" ; break;
+            case "ciseaux" : choixUti = "Ciseaux" ; break;
+            case "Ciseaux" : choixUti = "Ciseaux" ; break;
+            default : choixUti = prompt("Choisissez Pierre, Papier ou ciseaux");        
+        };
+        
+        var choixOrdi = Math.random();
+        
+        if(choixOrdi < 0.34) {choixOrdi='Pierre'}
+        else if (choixOrdi<0.66) {choixOrdi='Ciseaux'}
+        else {choixOrdi='Feuille'};
+        
+        document.write("L'uti à choissie " + choixUti)
+        document.write("<br/>L'ordinateur à choissie " + choixOrdi)
+        
+        var comparer = function(choixUti, choixOrdi) {
+            if(choixUti == choixOrdi) {document.write("<br/>Egalité !");}
+            else if (choixUti == "Ciseaux") {
+                if(choixOrdi == "Pierre"){document.write("<br/>Ordi Gagne");}
+                else {document.write("<br/>Tu gagne!");}
+            }
+           else if (choixUti == "Pierre") {
+                if(choixOrdi == "Feuille"){document.write("<br/>Ordi Gagne");}
+                else {document.write("<br/>Tu gagne!");}
+            }
+            else if (choixUti == "Feuille") {
+                if(choixOrdi == "Ciseaux"){document.write("<br/>Ordi Gagne");}
+                else {document.write("<br/>Tu gagne!");}
+            }
+        };
+        
+        comparer(choixUti,choixOrdi);
+        
+    </script>
+    </p>
+</body>
+</html>
